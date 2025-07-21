@@ -1,0 +1,19 @@
+<!-- כפתור הורדה וגלילה -->
+<section class="recommendation-banner">
+  <div class="content">
+    <h2>המלצת משרד רואה חשבון</h2>
+    <p>קבלו את ההמלצה המקצועית שלנו בקובץ PDF ברור ונגיש</p>
+    <div class="buttons">
+      <a href="./assets/recommendation.pdf" download class="btn btn-download">הורד PDF</a>
+      <button (click)="scrollToRecommendation()" class="btn btn-scroll">
+        &#x2193; קפוץ להמלצה
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- אזור ההמלצה -->
+<section id="recommendation-section" class="recommendation-section container">
+  <h3>המלצת משרד רואה חשבון</h3>
+  <iframe src="./assets/recommendation.pdf" frameborder="0"></iframe>
+</section>

@@ -1,0 +1,22 @@
+<nav class="navbar back">
+  <div class="nav-content">
+  
+ 
+    <!-- כפתור המבורגר -->
+    <button class="hamburger" (click)="toggleMenu()">
+      ☰
+    </button>
+ <a routerLink="/" class="logo">
+      <img src="./assets/logo.png" alt="לוגו יועצת מס" />
+    </a>
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a routerLink="/">בית</a></li>
+      <li><a routerLink="/שאלות-ותשובות">שאלות ותשובות</a></li>
+      <li><a routerLink="/אודות">אודות</a></li>
+      <li><a routerLink="/צור-קשר">צור קשר</a></li>
+      <li><a routerLink="/מדיניות-ופרטיות">מדיניות ופרטיות</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

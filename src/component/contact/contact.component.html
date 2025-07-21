@@ -1,0 +1,42 @@
+<div class="contact-container container">
+
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <h2>צור קשר</h2>
+    <div class="required">כל השדות המסומנות בכוכבית הינם חובה</div>
+    <label>
+      שם פרטי *
+      <input formControlName="firstName" placeholder="שם פרטי" />
+      <span *ngIf="isFieldInvalid('firstName')">יש להזין לפחות 2 אותיות</span>
+    </label>
+
+    <label>
+      שם משפחה
+      <input formControlName="lastName" placeholder="שם משפחה" />
+      <span *ngIf="isFieldInvalid('lastName')">יש להזין לפחות 2 אותיות</span>
+    </label>
+
+    <label>
+      טלפון *
+      <input formControlName="phone" placeholder="05X-XXXXXXX" />
+      <span *ngIf="isFieldInvalid('phone')">טלפון לא תקין</span>
+    </label>
+
+    <label>
+      מייל
+      <input formControlName="email" placeholder="your@email.com" />
+      <span *ngIf="isFieldInvalid('email')">מייל לא תקין</span>
+    </label>
+
+    <label>
+      הודעה
+      <textarea formControlName="message" rows="4" placeholder="הקלד את הודעתך כאן..."></textarea>
+    </label>
+
+    <button type="submit"  [disabled]="form.invalid">שלח</button>
+  </form>
+    <div class="image-side">
+<img src="./assets/conrtact.jpg" alt="תמונת אווירה לצור קשר" />
+
+  </div>
+</div>

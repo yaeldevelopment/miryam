@@ -1,0 +1,20 @@
+@if(slides && slides.length > 0) {
+  <button    [title]="[autoplay ? 'עצור'  :'הפעל']"title="עצור" (click)="toggleAutoplay()">
+    {{ autoplay ? '⏸️' : '▶️' }}
+  </button>
+
+  <ngx-slick-carousel #slickCarousel [config]="slideConfig" class="slider">
+    @for (slide of slides; track $index) {
+      <div class="slide-content" ngxSlickItem>
+        <img [src]="'./assets/' + slide.image" alt="Slide" />
+        <div class="overlay">
+          <h2>{{ slide.title }}</h2>
+          <p>{{ slide.subtitle }}</p>
+        </div>
+      </div>
+    }
+  </ngx-slick-carousel>
+}
+@else {
+  <p>נטען...</p>
+}

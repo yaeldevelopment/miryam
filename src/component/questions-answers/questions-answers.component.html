@@ -1,0 +1,25 @@
+<div class="container my-5 faq-wrapper">
+  <h1 class="text-center mb-4">שאלות ותשובות לעצמאים</h1>
+
+  <div class="accordion" id="faqAccordion">
+   @for ( item of faqs;track $index ){
+      <div
+      class="accordion-item"
+
+      (click)="toggle($index)"
+      [class.active]="selectedIndex === $index"
+    >
+      <h3 class="accordion-header">
+        <button class="accordion-button" type="button">
+          {{ item.question }}
+        </button>
+      </h3>
+      @if (selectedIndex ===$index) {
+        <div class="accordion-collapse collapse show">
+         <div class="accordion-body" [innerHTML]="item.answer"></div>
+        </div>
+      }
+    </div>}
+
+  </div>
+</div>
