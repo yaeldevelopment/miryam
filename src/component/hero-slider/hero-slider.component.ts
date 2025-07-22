@@ -20,7 +20,7 @@ export class HeroSliderComponent implements OnInit  {
 
    this.slides = [
  {image: 'Savings.png',
-    title: 'חוסכים לך כל שקל שאפשר מול רשויות המס',
+    title:'חוסכים לך כל שקל שאפשר',
     subtitle: 'ייעוץ מס מדויק לעצמאים ובעלי עסקים – בלי הפתעות מיותרות'
   },
   {
@@ -30,12 +30,12 @@ export class HeroSliderComponent implements OnInit  {
   },
   {
     image: 'Personal_service.png',
-    title: 'מרים צאלח – יועצת מס מוסמכת לעצמאים',
+    title: 'יועצת מס מוסמכת לעצמאים',
     subtitle: 'ליווי אישי מהשלב הראשון ועד לדוחות השנתיים – כולל הכל'
   },
   {
     image: 'Consulting.png',
-    title: 'הצלחה פיננסית מתחילה בייעוץ הנכון',
+    title: 'הצלחה פיננסית מתחילה בייעוץ נכון',
     subtitle: 'הצטרפו לעשרות לקוחות מרוצים שכבר חסכו אלפי שקלים בשנה'
   }
 ];   

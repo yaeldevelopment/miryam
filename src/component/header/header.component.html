@@ -1,15 +1,14 @@
 <nav class="navbar back">
   <div class="nav-content">
-  
- 
-    <!-- כפתור המבורגר -->
-    <button class="hamburger" (click)="toggleMenu()">
-      ☰
-    </button>
- <a routerLink="/" class="logo">
+    <a routerLink="/" class="logo">
       <img src="./assets/logo.png" alt="לוגו יועצת מס" />
     </a>
-    <ul class="nav-links" [class.open]="menuOpen">
+
+    <button class="hamburger" (click)="toggleMenu()">
+      {{ menuOpen ? '✖' : '☰' }}
+    </button>
+
+     <ul class="nav-links" [class.open]="menuOpen">
       <li><a routerLink="/">בית</a></li>
       <li><a routerLink="/שאלות-ותשובות">שאלות ותשובות</a></li>
       <li><a routerLink="/אודות">אודות</a></li>

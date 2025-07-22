@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class HeaderComponent {
 menuOpen = false;
 
-toggleMenu() {
-  this.menuOpen = !this.menuOpen;
+
+
+  constructor(private router: Router) {
+    // סגור תפריט בכל ניווט
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.menuOpen = false;
+      }
+    });
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
-}
+

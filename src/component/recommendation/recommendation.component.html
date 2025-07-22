@@ -1,19 +1,13 @@
 <!-- כפתור הורדה וגלילה -->
-<section class="recommendation-banner">
-  <div class="content">
-    <h2>המלצת משרד רואה חשבון</h2>
-    <p>קבלו את ההמלצה המקצועית שלנו בקובץ PDF ברור ונגיש</p>
-    <div class="buttons">
-      <a href="./assets/recommendation.pdf" download class="btn btn-download">הורד PDF</a>
-      <button (click)="scrollToRecommendation()" class="btn btn-scroll">
-        &#x2193; קפוץ להמלצה
-      </button>
-    </div>
-  </div>
-</section>
-
+<div class="recommendation-hint" (click)="scrollToRecommendation()" title="מעבר להמלצה">
+  <span class="text">המלצת רו"ח</span>
+  <span class="arrow">&#x2193;</span>
+</div>
 <!-- אזור ההמלצה -->
 <section id="recommendation-section" class="recommendation-section container">
   <h3>המלצת משרד רואה חשבון</h3>
-  <iframe src="./assets/recommendation.pdf" frameborder="0"></iframe>
+<iframe 
+  src="https://res.cloudinary.com/drtxmwrmb/image/upload/v1753190765/recommendation_owhxy2.pdf" 
+  frameborder="0" 
+  title="המלצה PDF"></iframe>
 </section>

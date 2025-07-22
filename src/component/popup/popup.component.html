@@ -1,14 +1,11 @@
 @if(showPopup){
-<div class="popup-overlay">
-  <div class="popup-modal">
-    <button class="close" (click)="closePopup()">×</button>
-    <h2>📣 עצמאי? חסוך אלפי ש"ח בייעוץ מס</h2>
-    <p>מרים, יועצת מס עם ניסיון בעבודה מול עצמאים, תדאג שכל שקל ייחשב!</p>
-    <button class="goToContact" (click)="goToContact()">לתיאום שיחה חינם</button>
+  <div class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+    <div class="popup-modal">
+      <button class="close" (click)="closePopup()" aria-label="סגור חלון קופץ">×</button>
+      <h2 id="popup-title">📣 עצמאי? חסוך אלפי ש"ח בייעוץ מס</h2>
+      <p id="popup-desc">מרים, יועצת מס עם ניסיון בעבודה מול עצמאים, תדאג שכל שקל ייחשב!</p>
+      <button class="goToContact" (click)="goToContact()">לתיאום שיחה חינם</button>
+    </div>
   </div>
-</div>
-
-
 }
-
 <router-outlet></router-outlet>

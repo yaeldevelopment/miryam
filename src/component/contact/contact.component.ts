@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,8 @@ import { NotificationService } from '../../services/notification-service.service
 })
 export class ContactComponent {
   form: FormGroup;
-
+@Input()
+ishome:boolean=false;
   constructor(private fb: FormBuilder,private func:FunctionService,private notificationService:NotificationService) {
     this.form = this.fb.group({
         firstName: ['', [Validators.required, Validators.minLength(2)]],

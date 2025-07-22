@@ -25,11 +25,21 @@ button {
   overflow: hidden;
   position: relative;
 }
-
-/* חובה כדי שהגובה יעבור פנימה */
+ @media (max-width:991px) {
+       ::ng-deep .slick-list {
+          height: 513px !important;
+       }
+       .overlay{
+        bottom: 0;
+       }
+    }
+    @media (min-width:991px) {
 ::ng-deep .slick-list {
   height: 600px !important;
 }
+
+    }
+/* חובה כדי שהגובה יעבור פנימה */
 
 ::ng-deep .slick-track {
   height: 100% !important;
@@ -60,6 +70,12 @@ button {
   display: block;
   background-color: #ccc; /* צבע רקע לבדיקת הצגת האזור */
 }::ng-deep .slide-content img {
+   @media (max-width:991px) {
+            object-position: top;
+    }
+    @media (min-width:991px) {
+             object-position:  center;
+    }
 
     width: 100%;
     height: 100%;
@@ -68,15 +84,21 @@ button {
 
 /* שכבת טקסט על הרקע */
 ::ng-deep .overlay {
+  height: 153px;
       background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
-    width: 500px;
+
     text-align: center;
     color: white;
     position: absolute;
-    top: 50%;
+ 
+    @media (min-width:991px) {
+        
+          width: 500px;
+         top: 50%;
     left: 10%;
+    }
 }
 
 ::ng-deep .title {
@@ -99,11 +121,12 @@ button {
 }
 
 ::ng-deep .slick-prev {
-     right: auto !important;
-    left: 10px;
+     left:  auto !important;
+    right: 10px;
+     transform: rotate(180deg);
 }
 
-::ng-deep .slick-next {
-    left:  auto !important;
-    right: 10px;
+::ng-deep .slick-next {  right: auto !important;
+    left: 10px;
+        transform: rotate(180deg);
 }

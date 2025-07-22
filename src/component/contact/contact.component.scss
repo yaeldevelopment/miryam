@@ -4,14 +4,34 @@
   margin: 2rem auto;
   gap: 2rem;
   font-family: Arial, sans-serif;
+ &.ishome {
+    .image-side {
+     width: 100%;
+    }
+    @media (min-width:991px) {
+         form {
+      position: absolute;
+    left: calc((30%));
+    margin: 2% 0;
+   width: 40%;
+    }
+    }
+ 
+  }
+    &:not(.ishome) {.image-side {
+    flex: 1;
+  }}
 
   .image-side {
-    flex: 1;
+   
     img {
+      @media (max-width:991px) {
+        display: none;
+      }
             background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-        height: 842.778px;
+        height: 950px;
       width: 100%;
       border-radius: 12px;
       object-fit: cover;
