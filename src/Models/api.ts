@@ -1,2 +1,2 @@
-const api = "https://localhost:7247/";
+const api = "https://miryam-serve.onrender.com/";
 export default api;
