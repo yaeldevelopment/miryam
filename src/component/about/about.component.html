@@ -1,30 +1,32 @@
-<section class="about-container container">
-
-
+<section class="about-container container" role="region" aria-labelledby="about-title">
   <div class="content-side">
-    <h1>אודות מרים צאלח</h1>
+    <h1 id="about-title" tabindex="-1">אודות מרים צאלח</h1>
     <h2>יועצת מס מוסמכת לעצמאים ועסקים קטנים</h2>
 
     <p>
       שלום, אני מרים צאלח – יועצת מס מוסמכת, עם ניסיון עשיר בטיפול בעוסקים פטורים, מורשים, שכירים ובעלי חברות.
-      מזה כ-4 שנים אני עוסקת בליווי פיננסי, עריכת דוחות שנתיים, הצהרות הון, תלושי שכר ועוד – במספר משרדי רואי חשבון מהמובילים בארץ.
+      מזה כ־4 שנים אני עוסקת בליווי פיננסי, עריכת דוחות שנתיים, הצהרות הון, תלושי שכר ועוד – במספר משרדי רואי חשבון מהמובילים בארץ.
     </p>
 
     <p>
       כיום אני פועלת באופן עצמאי ומספקת שירות אישי, יסודי ומדויק לעצמאים המחפשים שקט נפשי והתנהלות מסודרת מול רשויות המס.
     </p>
 
-    <ul class="highlights">
+    <ul class="highlights" aria-label="תחומי שירות עיקריים">
       <li>✔ עריכת דוחות שנתיים והצהרות הון</li>
       <li>✔ טיפול מלא בעוסקים – פטורים, מורשים, שכירים</li>
       <li>✔ ניסיון מעשי מול מע״מ, מס הכנסה וביטוח לאומי</li>
       <li>✔ שירות אישי, דיסקרטי ומקצועי</li>
     </ul>
 
-    <div class="contact-box">
+    <div class="contact-box" role="contentinfo" aria-label="פרטי התקשרות">
       <p><strong>📍 מיקום:</strong> מגדל העמק</p>
-      <p><strong>📞 טלפון:</strong> <a href="tel:0548591724">054-8591724</a></p>
-      <p><strong>📧 מייל:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
+      <p><strong>📞 טלפון:</strong> 
+        <a href="tel:0548591724" aria-label="התקשר לטלפון 054-8591724">054-8591724</a>
+      </p>
+      <p><strong>📧 מייל:</strong> 
+        <a href="mailto:{{email}}" [attr.aria-label]="'שלח מייל לכתובת ' + email">{{email}}</a>
+      </p>
     </div>
   </div>
 </section>

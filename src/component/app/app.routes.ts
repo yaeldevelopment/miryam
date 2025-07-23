@@ -6,9 +6,12 @@ import { AboutComponent } from '../about/about.component';
 import { ContactComponent } from '../contact/contact.component';
 import { QuestionsAnswersComponent } from '../questions-answers/questions-answers.component';
 
-export const routes: Routes = [{component:PolicyPrivacyComponent,path:"מדיניות-ופרטיות"}
-    ,{component:ContactComponent,path:"צור-קשר"}
-    ,{component:AboutComponent,path:"אודות"}
-    ,{component:QuestionsAnswersComponent,path:"שאלות-ותשובות"}
-    ,{component:HomeComponent,path:""}
-    ,{component:NotFoundComponent,path:"**"}];
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'שאלות-ותשובות', component: QuestionsAnswersComponent },
+  { path: 'אודות', component: AboutComponent },
+  { path: 'צור-קשר', component: ContactComponent },
+  { path: 'מדיניות-ופרטיות', component: PolicyPrivacyComponent },
+  { path: '**', component: NotFoundComponent } // דף ברירת מחדל אם הנתיב לא קיים
+];
+
