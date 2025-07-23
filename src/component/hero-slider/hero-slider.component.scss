@@ -122,11 +122,11 @@ button {
 
 ::ng-deep .slick-prev {
      left:  auto !important;
-    right: 10px;
-     transform: rotate(180deg);
+    right: 10px !important;
+
 }
 
 ::ng-deep .slick-next {  right: auto !important;
-    left: 10px;
-        transform: rotate(180deg);
+    left: 10px !important;
+
 }
