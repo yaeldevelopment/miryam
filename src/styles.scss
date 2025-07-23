@@ -10,7 +10,10 @@ body{
    direction: rtl;     font-family: sans-serif;
    @media (max-width: 767px) {
    font-size: 20px;
-   }
+   .uwy.userway_p1 .userway_buttons_wrapper{
+        top: 92px;
+   }}
+
    text-align: right;
 }
 @media (min-width: 767px) {

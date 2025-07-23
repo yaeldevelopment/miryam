@@ -13,7 +13,7 @@ services = [
     icon: 'bi-cash-coin text-success'
   },
   {
-    title: 'ראיית חשבון',
+    title: 'ניהול תיקים',
     icon: 'bi-journal-check text-primary'
   },
   {

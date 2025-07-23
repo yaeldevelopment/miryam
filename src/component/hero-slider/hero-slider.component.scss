@@ -26,8 +26,11 @@ button {
   position: relative;
 }
  @media (max-width:991px) {
+  ::ng-deep .overlay {
+       border-radius: 0px 0px 8px 8px;
+  }
        ::ng-deep .slick-list {
-          height: 513px !important;
+          height: 565.5px !important;
        }
        .overlay{
         bottom: 0;
@@ -85,16 +88,16 @@ button {
 /* שכבת טקסט על הרקע */
 ::ng-deep .overlay {
   height: 153px;
-      background-color: #1e1c1ceb;
+      background-color: rgb(71 67 67 / 92%);
     padding: 20px;
-    border-radius: 8px;
+ 
 
     text-align: center;
     color: white;
     position: absolute;
  
     @media (min-width:991px) {
-        
+           border-radius: 8px;
           width: 500px;
          top: 50%;
     left: 5%;
