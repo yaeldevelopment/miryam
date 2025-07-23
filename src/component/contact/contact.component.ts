@@ -33,7 +33,7 @@ customer:Customer|null=null;
   onSubmit() {
     if (this.form.invalid) return;
  this.customer =new Customer(this.form.get("firstName")?.value,this.form.get("lastName")?.value,this.form.get("phone")?.value,this.form.get("email")?.value,this.form.get("message")?.value); 
-console.log(this.customer)
+
     this.func.SendEmail(this.customer).subscribe({
       next: (res:string) => {
        this.notificationService.showPopup('success', 'הפנייה התקבלה בהצלחה','נתפנה ונחזור אליכם בהקדם באפשרי, תודה'  );
