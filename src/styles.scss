@@ -5,10 +5,15 @@ body .uwy.userway_p1 .userway_buttons_wrapper{
 }
 body{
    direction: rtl;     font-family: sans-serif;
+   @media (max-width: 767px) {
    font-size: 20px;
+   }
    text-align: right;
 }
 @media (min-width: 767px) {
+  body{
+       font-size: 20px;
+  }
     h2,h1 {
         margin: 40px 0px;
     }
