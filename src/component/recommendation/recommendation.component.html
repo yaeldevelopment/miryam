@@ -1,13 +1,31 @@
 <!-- כפתור הורדה וגלילה -->
-<div class="recommendation-hint" (click)="scrollToRecommendation()" title="מעבר להמלצה">
+<div 
+  class="recommendation-hint" 
+  role="button" 
+  tabindex="0"
+  (click)="scrollToRecommendation()" 
+  (keyup.enter)="scrollToRecommendation()" 
+  aria-label="מעבר להמלצת רואה חשבון" 
+  title="מעבר להמלצה"
+>
   <span class="text">המלצת רו"ח</span>
-  <span class="arrow">&#x2193;</span>
+  <span class="arrow" aria-hidden="true">&#x2193;</span>
 </div>
+
 <!-- אזור ההמלצה -->
-<section id="recommendation-section" class="recommendation-section container">
-  <h3>המלצת משרד רואה חשבון</h3>
-<iframe 
-  src="https://res.cloudinary.com/drtxmwrmb/image/upload/v1753190765/recommendation_owhxy2.pdf" 
-  frameborder="0" 
-  title="המלצה PDF"></iframe>
+<section 
+  id="recommendation-section" 
+  class="recommendation-section container" 
+  aria-labelledby="recommendation-title"
+>
+  <h3 id="recommendation-title">המלצת משרד רואה חשבון</h3>
+
+  <iframe 
+    src="https://res.cloudinary.com/drtxmwrmb/image/upload/v1753190765/recommendation_owhxy2.pdf" 
+    frameborder="0" 
+    title="מסמך המלצה ממרים צאלח - משרד רואה חשבון"
+    aria-label="מסמך PDF: המלצת רואה חשבון"
+    width="100%" 
+    height="600px"
+  ></iframe>
 </section>

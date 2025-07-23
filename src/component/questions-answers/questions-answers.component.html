@@ -1,25 +1,33 @@
 <div class="container my-5 faq-wrapper">
-  <h1 class="text-center mb-4">שאלות ותשובות לעצמאים</h1>
+  <h1 class="text-center mb-4" id="faq-title">שאלות ותשובות לעצמאים</h1>
 
-  <div class="accordion" id="faqAccordion">
-   @for ( item of faqs;track $index ){
-      <div
-      class="accordion-item"
+  <div class="accordion" id="faqAccordion" role="region" aria-labelledby="faq-title">
+    @for (item of faqs; track $index) {
+      <div class="accordion-item">
+        <h3 class="accordion-header" [id]="'faq-heading-' + $index">
+          <button
+            class="accordion-button"
+            type="button"
+            (click)="toggle($index)"
+            [attr.aria-expanded]="selectedIndex === $index"
+            [attr.aria-controls]="'faq-panel-' + $index"
+            [attr.id]="'faq-button-' + $index"
+          >
+            {{ item.question }}
+          </button>
+        </h3>
 
-      (click)="toggle($index)"
-      [class.active]="selectedIndex === $index"
-    >
-      <h3 class="accordion-header">
-        <button class="accordion-button" type="button">
-          {{ item.question }}
-        </button>
-      </h3>
-      @if (selectedIndex ===$index) {
-        <div class="accordion-collapse collapse show">
-         <div class="accordion-body" [innerHTML]="item.answer"></div>
-        </div>
-      }
-    </div>}
-
+        @if (selectedIndex === $index) {
+          <div
+            class="accordion-collapse collapse show"
+            [attr.id]="'faq-panel-' + $index"
+            role="region"
+            [attr.aria-labelledby]="'faq-button-' + $index"
+          >
+            <div class="accordion-body" [innerHTML]="item.answer"></div>
+          </div>
+        }
+      </div>
+    }
   </div>
 </div>
