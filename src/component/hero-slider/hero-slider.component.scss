@@ -30,7 +30,7 @@ button {
        border-radius: 0px 0px 8px 8px;
   }
        ::ng-deep .slick-list {
-          height: 565.5px !important;
+          height:565px !important;
        }
        .overlay{
         bottom: 0;
@@ -75,6 +75,8 @@ button {
 }::ng-deep .slide-content img {
    @media (max-width:991px) {
             object-position: top;
+            height: 412px!important;
+            object-fit: cover;
     }
     @media (min-width:991px) {
              object-position:  center;

@@ -8,10 +8,14 @@ import { Component } from '@angular/core';
 })
 export class RecommendationComponent {
 scrollToRecommendation() {
-  const section = document.getElementById('recommendation-section');
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
+const section = document.getElementById('recommendation-section');
+if (section) {
+  const yOffset = -100; // שלילי = לעצור לפני
+  const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
+
 }
 
 }
