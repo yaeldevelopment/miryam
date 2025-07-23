@@ -1,10 +1,13 @@
+header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+}
 .navbar {
    @media (min-width: 768px) {
   padding: 10px 10%;
    }
-  position: sticky;
-  top: 0;
-  z-index: 9999;
 
   .nav-content {
     display: flex;

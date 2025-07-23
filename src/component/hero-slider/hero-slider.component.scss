@@ -85,7 +85,7 @@ button {
 /* שכבת טקסט על הרקע */
 ::ng-deep .overlay {
   height: 153px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: #1e1c1ceb;
     padding: 20px;
     border-radius: 8px;
 
@@ -97,7 +97,7 @@ button {
         
           width: 500px;
          top: 50%;
-    left: 10%;
+    left: 5%;
     }
 }
 
