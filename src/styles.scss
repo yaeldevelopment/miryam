@@ -3,6 +3,9 @@
 body .uwy.userway_p1 .userway_buttons_wrapper{
       right: calc(100vw - 50px);
 }
+div.container{
+margin: auto;
+}
 body{
    direction: rtl;     font-family: sans-serif;
    @media (max-width: 767px) {
