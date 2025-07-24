@@ -93,13 +93,16 @@
       placeholder="הקלד את הודעתך כאן..."
     ></textarea>
 
-    <button 
-      type="submit" 
-      [disabled]="form.invalid" 
-      [attr.aria-disabled]="form.invalid"
-    >
-      שלח
-    </button>
+<button 
+  type="submit" 
+  [disabled]="form.invalid || isLoading" 
+  [attr.aria-disabled]="form.invalid || isLoading"
+>
+  <ng-container *ngIf="isLoading">
+    <span class="spinner" aria-hidden="true"></span>
+  </ng-container>
+  שלח
+</button>
   </form>
 
   <div class="image-side d-none d-lg-block" aria-hidden="true">

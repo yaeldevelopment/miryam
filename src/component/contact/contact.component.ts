@@ -13,6 +13,8 @@ import { NotificationService } from '../../services/notification-service.service
 })
 export class ContactComponent {
   form: FormGroup;
+  isLoading = false;
+
 @Input()
 ishome:boolean=false;
   constructor(private fb: FormBuilder,private func:FunctionService,private notificationService:NotificationService) {
@@ -30,20 +32,29 @@ ishome:boolean=false;
     return !!(control && control.invalid && (control.dirty || control.touched));
   }
 customer:Customer|null=null;
-  onSubmit() {
-    if (this.form.invalid) return;
- this.customer =new Customer(this.form.get("firstName")?.value,this.form.get("lastName")?.value,this.form.get("phone")?.value,this.form.get("email")?.value,this.form.get("message")?.value); 
+onSubmit() {
+  if (this.form.invalid) return;
 
-    this.func.SendEmail(this.customer).subscribe({
-      next: (res:string) => {
-       this.notificationService.showPopup('success', 'הפנייה התקבלה בהצלחה','נתפנה ונחזור אליכם בהקדם באפשרי, תודה'  );
-      },
-      error: (err) => {
-           this.notificationService.showPopup('error','הפנייה נכשלה'  ,'אנא נסו במועד מאוחר יותר, תודה' );
-      }
-    });
+  this.isLoading = true;
 
-   
-    this.form.reset();
-  }
+  this.customer = new Customer(
+    this.form.get("firstName")?.value,
+    this.form.get("lastName")?.value,
+    this.form.get("phone")?.value,
+    this.form.get("email")?.value,
+    this.form.get("message")?.value
+  );
+
+  this.func.SendEmail(this.customer).subscribe({
+    next: (res: string) => {
+      this.notificationService.showPopup('success', 'הפנייה התקבלה בהצלחה', 'נתפנה ונחזור אליכם בהקדם באפשרי, תודה');
+      this.form.reset();
+      this.isLoading = false;
+    },
+    error: (err) => {
+      this.notificationService.showPopup('error', 'הפנייה נכשלה', 'אנא נסו במועד מאוחר יותר, תודה');
+      this.isLoading = false;
+    }
+  });
+}
 }
