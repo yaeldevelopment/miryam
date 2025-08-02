@@ -3,7 +3,7 @@
 
   <div class="accordion" id="faqAccordion" role="region" aria-labelledby="faq-title">
     @for (item of faqs; track $index) {
-      <div class="accordion-item">
+      <div class="accordion-item"  [class.active]="selectedIndex === $index">
         <h3 class="accordion-header" [id]="'faq-heading-' + $index">
           <button
             class="accordion-button"

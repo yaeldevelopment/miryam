@@ -1,8 +1,4 @@
 .faq-wrapper {
-
-
-
-
   .accordion-item {
     margin-bottom: 0.5rem;
     border: 1px solid #ddd;
@@ -11,11 +7,15 @@
     cursor: pointer;
     transition: box-shadow 0.3s ease;
 
+    &:not(.active){
+         .accordion-button::after{
+          transform: rotate(0deg);
+              transition: box-shadow 0.3s ease;
+       }
+    }
     &.active {
       box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
-        .accordion-button::after{
-    transform: rotate(0deg);
-        }
+     
     }
 
     .accordion-button {
